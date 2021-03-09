@@ -8,7 +8,7 @@
 	let d = document, ver = "v.0.1.7";
 	var cur_url = window.location.href;
 	var post_id = cur_url.split('/')[3];
-	console.log(post_id);
+	log("post_id ================ "+post_id);
 	
 	function info(msg)
 	{
