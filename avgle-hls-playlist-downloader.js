@@ -7,7 +7,7 @@
 	"use strict";
 	let d = document, ver = "v.0.1.7";
 	var cur_url = window.location.href;
-	var post_id = cur_url.split('/')[3];
+	var post_id = cur_url.split('/')[4];
 	log("post_id ================ "+post_id);
 	
 	function info(msg)
@@ -136,11 +136,11 @@
 								playlist = decryptPlaylist(playlist, newOptions);
 								log("decrypted playlist:\n"+ playlist);
 								info("decrypted playlist successfully");
-								downloadPlaylist(playlist, "avgle.m3u8");
+								downloadPlaylist(playlist, post_id+".m3u8");
 							}
 							else {
 								log("segment uri is not encrypted");
-								downloadPlaylist(playlist, "avgle.m3u8");
+								downloadPlaylist(playlist, post_id+".m3u8");
 							}
 						}
 						else {
