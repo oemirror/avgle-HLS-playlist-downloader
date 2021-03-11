@@ -136,11 +136,11 @@
 								playlist = decryptPlaylist(playlist, newOptions);
 								log("decrypted playlist:\n"+ playlist);
 								info("decrypted playlist successfully");
-								downloadPlaylist(playlist, post_id+".m3u8");
+								downloadPlaylist(playlist, "[avgle]"+post_id+".m3u8");
 							}
 							else {
 								log("segment uri is not encrypted");
-								downloadPlaylist(playlist, post_id+".m3u8");
+								downloadPlaylist(playlist, "[avgle]"+post_id+".m3u8");
 							}
 						}
 						else {
