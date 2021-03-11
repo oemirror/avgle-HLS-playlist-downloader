@@ -7,7 +7,8 @@
 	"use strict";
 	let d = document, ver = "v.0.1.7";
 	var cur_url = window.location.href;
-	var post_id = cur_url.split('/')[4];
+	//var post_id = cur_url.split('/')[4];
+	var post_id = video_hkey;
 	log("post_id ================ "+post_id);
 	
 	function info(msg)
