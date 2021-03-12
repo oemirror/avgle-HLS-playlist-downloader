@@ -138,7 +138,7 @@
 								log("decrypted playlist:\n"+ playlist);
 								info("decrypted playlist successfully");
 								
-								info("insert into task (referer,filename) values ('"+video_hkey+"','"+video_title+"');");
+								// info("insert into task (referer,filename) values ('"+video_hkey+"','"+video_title+"');");
 								downloadPlaylist(playlist, "[avgle]"+post_id+".m3u8");
 							}
 							else {
