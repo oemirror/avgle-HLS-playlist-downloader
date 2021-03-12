@@ -137,6 +137,8 @@
 								playlist = decryptPlaylist(playlist, newOptions);
 								log("decrypted playlist:\n"+ playlist);
 								info("decrypted playlist successfully");
+								
+								info("insert into task (referer,filename) values ('"+video_hkey+"','"+video_title+"');");
 								downloadPlaylist(playlist, "[avgle]"+post_id+".m3u8");
 							}
 							else {
@@ -158,7 +160,6 @@
 		};
 		log("hooked videojs.Hls.xhr.beforeRequest and waiting hls xhr request");
 		info("Please click the close button.");
-		info("insert into task (referer,filename) values ('"+video_hkey+"','"+video_title+"');");
 		d.querySelector("#player_3x2_container").addEventListener("click",()=>{
 			info("waiting hls xhr request");
 			log("the close button clicked");
