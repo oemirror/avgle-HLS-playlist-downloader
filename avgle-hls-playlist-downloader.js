@@ -79,6 +79,7 @@
 				let tag = a[i];
 				if (/^#EXT-X-ENDLIST/.test(tag))
 					a[i] = "#[avgle]"+video_hkey+"_"+video_title;
+					return a.join('\n');
 					break;
 				continue;
 			}
