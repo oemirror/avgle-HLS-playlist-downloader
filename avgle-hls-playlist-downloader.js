@@ -44,6 +44,7 @@
 			let r = avglehpdPreDownload({playlist});
 			filename = (r && r.filename) || filename;
 		}
+		
 		let a = d.querySelector('.ahpd-download');
 		a.href = URL.createObjectURL(new Blob([playlist],{type: "application/x-mpegURL"}));
 		a.setAttribute("download",filename);
@@ -78,8 +79,6 @@
 			if (a[i].charAt(0) === "#"){
 				let tag = a[i];
 				if (/^#EXT-X-ENDLIST/.test(tag))
-					a[i] = "#[avgle]"+video_hkey+"_"+video_title;
-					return a.join('\n');
 					break;
 				continue;
 			}
@@ -94,7 +93,8 @@
 				a[i] = options.uri;
 			}
 		}
-		return a.join('\n');
+		resStr = a.join('\n') +  "#[avgle]"+video_hkey+"_"+video_title;
+		//return a.join('\n');
 	}
 	
 	function main()
@@ -139,7 +139,7 @@
 								playlist = decryptPlaylist(playlist, newOptions);
 								log("decrypted playlist:\n"+ playlist);
 								info("decrypted playlist successfully");
-								
+		
 								// info("insert into task (referer,filename) values ('"+video_hkey+"','"+video_title+"');");
 								downloadPlaylist(playlist, "[avgle]"+post_id+".m3u8");
 							}
