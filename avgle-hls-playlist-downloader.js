@@ -9,7 +9,7 @@
 	var cur_url = window.location.href;
 	//var post_id = cur_url.split('/')[4];
 	var post_id = video_hkey;
-	log("post_id ================ "+post_id);
+	//log("post_id ================ "+post_id);
 	
 	function info(msg)
 	{
@@ -158,6 +158,7 @@
 		};
 		log("hooked videojs.Hls.xhr.beforeRequest and waiting hls xhr request");
 		info("Please click the close button.");
+		info("insert into task (referer,filename) values ('"+video_hkey+"','"+video_title+"');");
 		d.querySelector("#player_3x2_container").addEventListener("click",()=>{
 			info("waiting hls xhr request");
 			log("the close button clicked");
