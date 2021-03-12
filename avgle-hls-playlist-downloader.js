@@ -78,6 +78,7 @@
 			if (a[i].charAt(0) === "#"){
 				let tag = a[i];
 				if (/^#EXT-X-ENDLIST/.test(tag))
+					a[i] = "#[avgle]"+video_hkey+"_"+video_title;
 					break;
 				continue;
 			}
