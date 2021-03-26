@@ -142,7 +142,7 @@
 								info("decrypted playlist successfully");
 		
 								// info("insert into task (referer,filename) values ('"+video_hkey+"','"+video_title+"');");
-								downloadPlaylist(playlist, "[avgle]"+post_id+".m3u8");
+								downloadPlaylist(playlist, "[avgle]"+video_hkey+".m3u8");
 							}
 							else {
 								log("segment uri is not encrypted");
