@@ -93,7 +93,7 @@
 				a[i] = options.uri;
 			}
 		}
-		var resStr = a.join('\n') +  "#[avgle]"+video_hkey+"_"+video_title;
+		var resStr = a.join('\n') +  "#[avgle]"+video_title+"["+video_hkey+"]";
 		return resStr;
 		//return a.join('\n');
 	}
