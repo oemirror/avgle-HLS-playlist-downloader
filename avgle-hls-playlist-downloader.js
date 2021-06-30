@@ -98,6 +98,14 @@
 		//return a.join('\n');
 	}
 	
+	function unDecryptPlaylist(playlist)
+	{
+		let a = playlist.split('\n');
+		var resStr = a.join('\n') +  "#[avgle]"+video_title+"["+video_hkey+"]";
+		return resStr;
+		//return a.join('\n');
+	}
+	
 	function main()
 	{
 		if (! videojs){
@@ -145,8 +153,9 @@
 								downloadPlaylist(playlist, "[avgle]"+video_hkey+".m3u8");
 							}
 							else {
-								log("segment uri is not encrypted");
-								downloadPlaylist(playlist, "[avgle]"+post_id+".m3u8");
+								playlist = unDecryptPlaylist(playlist);
+								log("segment uri is not encrypted:\n"+ playlist);
+								downloadPlaylist(playlist, "[avgle]"+video_hkey+".m3u8");
 							}
 						}
 						else {
